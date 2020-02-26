@@ -1,0 +1,39 @@
+
+Code that I wrote is solving problem for most kind of matrices. 
+At the first stage program is checking weather or not we have more rows then columns($A_{m x n} m>n$), 
+if so im cutting this object to square matrix, in other case nothing changes. 
+Then I'm binding matrix $ A$ with vector of responses$ b$ and create matrix $X = [A,b]$
+To start my algorithm i need to have a value different that zero on the top right corner so I'm permuting my rows until non-zero value appears in this place.
+Than iI want all values to in first column to be zero (except first row), then i repeat it until I have upper-triangle matrix. After this I check if any zero rows appear, if so, I'm deleting them and I know that my system of equations has conditional solutions. On the other hand I'm checking if there is situation that  one of the rows in right side of equation (only previous $A$ part) is equal to zero but the left side ($b$) is not. It that case i have  contradictory system of equations and program will show error.  After that im eliminating other values in rows to get  diagonal matrix. On diagonals, there should be only ones so it's easy to see what is a value of certain variable. If my system of equations is has conditional then output won't be diagonal matrix but one that can be parametrized in proper way. For the case when I have more rows then columns I'm checking my solution for the rest of the rows, if one of them is different I raise value error
+
+Test. Sorry Im not after CS study so my tests are not so complicated (but i'm keen to learn how to make those!) but I tried to cover some of them  in given examples.
+
+Test 
+
+On diagonal matrix (randomly generated x)
+
+On symmetric matrix (random x and A)
+
+5x2 Matrix with (sprzeczne) solution 
+
+5x2 Matrix with existing solution 
+
+Infinity of solutions
+
+Classical example with no assumptions 
+
+Positive-define Matrix 
+
+subject to can be rewrite as 
+$$x + y + z <= 5$$
+$$x + y       <= 4$$
+$z <=4$
+
+
+To solve the LP problem we need to check ale vertices of this figure and check which one is maximizing upon given function. 
+
+All vetices comes as follow $\{(0,0,0),(4,0,0),(0,4,0),(4,0,1),(0,4,1),(0,0,4),(1,0,4),(0,1,4)\}$
+
+The one that maximize our goal function $f(x) = c^Tx $ is $(4,0,1)$ or $(0,1,4)$ both of them give us 9 as reachable maximum.
+
+                     
